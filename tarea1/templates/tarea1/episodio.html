@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                {{episodio.series}}
+            </h1>
+            <h2 class="subtitle"> Temporada {{episodio.season}} Episodio {{episodio.episode}}: "{{episodio.title}}" </h2>
+            <br>
+            <h6 class="title is-6">Fecha de lanzamiento:</h6> <h6 class="subtitle is-6">{{episodio.air_date}}</h6>
+            <br>
+            <h6 class="title is-6">Personajes:</h6>
+            {% for personaje in episodio.characters %}
+                <form action = "/personaje/" method="GET"> 
+                    <button class= "button is-link is-outlined" name="subject" type="submit" value={{personaje}}> {{personaje}} </button>
+                    <br>
+                    <br>
+                </form>
+            {% endfor %}
+
+        </div>
+    </section>
+{% endblock %}

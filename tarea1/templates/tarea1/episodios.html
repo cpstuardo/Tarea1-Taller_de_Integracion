@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                {{ serie }}
+            </h1>
+            <h2 class="subtitle"> Temporada {{temporada}} </h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Título</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for episodio in episodios %}
+                        <tr>
+                            <td>{{episodio.episode}}</td>
+                            <td>{{episodio.title}}</td>
+                            <td>
+                                <form action = "/episodio/" method="GET"> 
+                                    <button class= "button is-link is-outlined" name="subject" type="submit" value={{episodio.episode_id}}>Ver información</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+{% endblock %}

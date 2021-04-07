@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                {{serie}}
+            </h1>
+            <form action = "/episodios/{{nombre_serie}}/" method="GET"> 
+                {% for temporada in temporadas %}
+                    <button class= "button is-link is-outlined" name="subject" type="submit" value={{temporada}}>Temporada {{temporada}}</button>
+                    <br>
+                    <br>
+                {% endfor %}
+            </form>
+
+        </div>
+    </section>
+{% endblock %}

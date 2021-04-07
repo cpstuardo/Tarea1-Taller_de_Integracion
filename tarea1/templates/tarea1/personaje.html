@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <h1 class="title">
+                    {{personaje.name}}
+                </h1>
+                <br>
+                <h6 class="title is-6">Sobrenombre:</h6><h6 class="subtitle is-6">{{personaje.nickname}}</h6>
+                <br>
+                <h6 class="title is-6">Actor:</h6><h6 class="subtitle is-6">{{personaje.portrayed}}</h6>
+                <br>
+                <h6 class="title is-6">Estado:</h6><h6 class="subtitle is-6">{{personaje.status}}</h6>
+                <br>
+                <h6 class="title is-6">Ocupación:</h6> 
+                    {% for ocupacion in personaje.occupation %}
+                        <span class="tag">{{ocupacion}}</span>    
+                    {% endfor %}
+                <br>
+                <br>
+                <h6 class="title is-6">Series en las que aparece:</h6><h6 class="subtitle is-6">{{personaje.category}}</h6>
+                <br>
+                {% if personaje.appearance %}
+                    <h6 class="title is-6">Temporadas aparición Breaking Bad:</h6>
+                        <div class="tags">  
+                            {% for temporada in personaje.appearance %}
+                                <form action = "/episodios/Breaking+Bad/" method="GET"> 
+                                    <button class= "button is-link is-outlined" name="subject" type="submit" value={{temporada}}>{{temporada}}</button>
+                                </form> 
+                            {% endfor %}
+                        </div>    
+                    <br>
+                    <br>
+                {% endif %}
+                {% if personaje.better_call_saul_appearance %}
+                    <h6 class="title is-6">Temporadas aparición Better Call Saul:</h6>
+                        <div class="tags">    
+                            {% for temporada in personaje.better_call_saul_appearance %}
+                                <form action = "/episodios/Better+Call+Saul/" method="GET"> 
+                                    <button class= "button is-link is-outlined" name="subject" type="submit" value={{temporada}}>{{temporada}}</button>
+                                </form> 
+                            {% endfor %}
+                        </div>        
+                    <br>
+                {% endif %}
+            </div>
+            <div class= "column">
+                <figure class="image is-128x128">
+                    <img src={{personaje.img}}>
+                </figure>
+            </div>
+        </div>
+    </section>
+{% endblock %}

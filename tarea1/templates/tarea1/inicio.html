@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <div class="notification is-info is-light">
+                <strong>Elige una serie</strong>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <figure class="image is-128x128">
+                        <img src="https://tarea-1-breaking-bad.herokuapp.com/static/media/breaking_bad.6d275852.jpg">
+                    </figure>
+                    <br>
+                    <form action = "/temporadas/" method="GET">
+                        <button class="button is-link is-outlined" name="subject" type="submit" value="Breaking Bad">Breaking Bad</button>
+                    </form>
+                </div>
+                <div class="column is-half">
+                    <figure class="image is-128x128">
+                        <img src="https://tarea-1-breaking-bad.herokuapp.com/static/media/button.166e4f54.jpg">
+                    </figure>
+                    <br>
+                    <form action = "/temporadas/" method="GET">
+                        <button class="button is-link is-outlined" name="subject" type="submit" value="Better Call Saul">Better Call Saul</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

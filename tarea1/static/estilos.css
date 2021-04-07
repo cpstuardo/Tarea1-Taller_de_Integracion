@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: blue;
+    font-family: Segoe UI;
+}
+
+/*este id no se puede repetir*/ 
+#container{
+    width: 70%;
+    margin: 0px auto;
+    border: 1px;
+}
+
+header{
+    height: 100px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.article{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
