@@ -19,7 +19,7 @@ from tarea1.views import inicio, temporadas, episodios, episodio, personaje
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', inicio),
+    path('', inicio),
     path('temporadas/', temporadas),
     path('episodios/<serie>/', episodios),
     path('episodio/', episodio),
