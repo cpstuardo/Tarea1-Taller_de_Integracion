@@ -24,4 +24,4 @@ urlpatterns = [
     path('episodios/<serie>/', episodios),
     path('episodio/', episodio),
     path('personaje/', personaje),
-]
+] 
