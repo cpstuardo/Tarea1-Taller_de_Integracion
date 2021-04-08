@@ -48,3 +48,18 @@ def citas(request):
     citas = response.json()
     return render(request, "citas.html", {"citas": citas, "autor": personaje_nombre})
 
+def personajes(request):
+    buscado = request.GET["subject"] 
+    buscado_plus =buscado.replace(" ", "+")
+    response = requests.get('https://tarea-1-breaking-bad.herokuapp.com/api/characters?name='+ buscado_plus)
+    personajes = response.json()
+    if buscado == " ":
+        i = 10
+        response2 = requests.get('https://tarea-1-breaking-bad.herokuapp.com/api/characters?' + f'?limit=10&offset={i}')
+        lista = response2.json()
+        while lista != []:
+            personajes += lista
+            i += 10
+            response2 = requests.get('https://tarea-1-breaking-bad.herokuapp.com/api/characters?' + f'?limit=10&offset={i}')
+            lista = response2.json()
+    return render(request, "personajes.html", {"personajes": personajes, 'buscado': buscado})

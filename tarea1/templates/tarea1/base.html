@@ -25,16 +25,16 @@
 
         <div class="navbar-end">
             <div class="navbar-item">
-                <div class="field is-grouped">
-                    <p class="control is-expanded">
-                      <input class="input" type="text" placeholder="Buscar personaje">
-                    </p>
-                    <p class="control">
-                      <a class="button is-info">
-                        Buscar
-                      </a>
-                    </p>
-                </div>
+                <form action = "/personajes/" method="GET">
+                    <div class="field is-grouped">
+                        <p class="control is-expanded">
+                        <input class="input" type="text" required name="subject" placeholder="Buscar personaje">
+                        </p>
+                        <p class="control">
+                        <button class= "button is-link is-outlined" type="submit"> Buscar </button>
+                        </p>
+                    </div>
+                </form>    
             </div>
         </div>
     </div>
