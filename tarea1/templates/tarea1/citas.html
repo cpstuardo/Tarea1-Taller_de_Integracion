@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Citas de {{autor}}:
+            </h1>
+            <br>
+            {% for cita in citas %}
+                <h6 class="subtitle is-6">- {{cita.quote}} ({{cita.series}})</h6>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

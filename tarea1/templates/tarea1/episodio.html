@@ -13,7 +13,7 @@
             <h6 class="title is-6">Personajes:</h6>
             {% for personaje in episodio.characters %}
                 <form action = "/personaje/" method="GET"> 
-                    <button class= "button is-link is-outlined" name="subject" type="submit" value={{personaje}}> {{personaje}} </button>
+                    <button class= "button is-link is-outlined" name="subject" type="submit" value="{{personaje}}"> {{personaje}} </button>
                     <br>
                     <br>
                 </form>

@@ -45,6 +45,11 @@
                         </div>        
                     <br>
                 {% endif %}
+                <br>
+                <form action = "/citas/" method="GET">
+                    <button class="button is-link is-outlined" name="subject" type="submit" value="{{personaje.name}}">Ver citas</button>
+                </form>
+                <br>
             </div>
             <div class= "column">
                 <figure class="image is-128x128">

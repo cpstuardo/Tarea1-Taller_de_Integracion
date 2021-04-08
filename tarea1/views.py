@@ -41,6 +41,10 @@ def personaje(request):
     personaje = response.json()
     return render(request, "personaje.html", {"personaje": personaje[0]})
 
-
-
+def citas(request):
+    personaje = request.GET["subject"]
+    personaje_nombre = personaje.replace("+", " ")
+    response = requests.get('https://tarea-1-breaking-bad.herokuapp.com/api/quote?author='+ personaje)
+    citas = response.json()
+    return render(request, "citas.html", {"citas": citas, "autor": personaje_nombre})
 
